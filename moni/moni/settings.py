@@ -142,11 +142,11 @@ WSGI_APPLICATION = 'moni.wsgi.application'  # Configuración de la aplicación W
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql_psycopg2",  # Motor de base de datos PostgreSQL
-        "NAME": "AquaCircuitBD",  # Nombre de la base de datos
-        "USER": "postgres",  # Usuario de la base de datos
-        "PASSWORD": "Eduardo1",  # Contraseña de la base de datos
-        "HOST": "localhost",  # Host de la base de datos
-        "PORT": "5432",  # Puerto de la base de datos
+        "NAME": os.getenv("DATABASE_NAME", "AquaCircuitBD"),  # Nombre de la base de datos
+        "USER": os.getenv("DATABASE_USER", "postgres"),  # Usuario de la base de datos
+        "PASSWORD": os.getenv("DATABASE_PASSWORD", "Eduardo1"),  # Contraseña de la base de datos
+        "HOST": os.getenv("DATABASE_HOST", "localhost"),  # Host de la base de datos
+        "PORT": os.getenv("DATABASE_PORT", "5432"),  # Puerto de la base de datos
     }
 }
 
